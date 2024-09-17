@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dv3pe466ai1il"
+path="res://.godot/imported/Quack in the Dark.mp3-9f6a892b9d4478f3022f096f0bd734b3.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Quack in the Dark.mp3"
+dest_files=["res://.godot/imported/Quack in the Dark.mp3-9f6a892b9d4478f3022f096f0bd734b3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

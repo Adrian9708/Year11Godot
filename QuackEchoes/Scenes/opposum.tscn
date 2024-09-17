@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://bojje33fgoyq"]
+
+[ext_resource type="Script" path="res://Scenes/opposum.gd" id="1_rs36h"]
+[ext_resource type="Texture2D" uid="uid://2logrmbqy1u1" path="res://Sprites/Enemy/oposum.png" id="1_tw0ux"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_78pwo"]
+radius = 13.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8w8r"]
+atlas = ExtResource("1_tw0ux")
+region = Rect2(0, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr3l3"]
+atlas = ExtResource("1_tw0ux")
+region = Rect2(36, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86nyx"]
+atlas = ExtResource("1_tw0ux")
+region = Rect2(72, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l0if"]
+atlas = ExtResource("1_tw0ux")
+region = Rect2(108, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no4yv"]
+atlas = ExtResource("1_tw0ux")
+region = Rect2(144, 0, 36, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xupy"]
+atlas = ExtResource("1_tw0ux")
+region = Rect2(180, 0, 36, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_11uio"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8w8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr3l3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86nyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l0if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no4yv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xupy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Opposum" type="CharacterBody2D" groups=["Hurt"]]
+script = ExtResource("1_rs36h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_78pwo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_11uio")
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
