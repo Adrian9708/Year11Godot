@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cjoqdy7ia55aw"]
+[gd_scene load_steps=34 format=3 uid="uid://cjoqdy7ia55aw"]
 
 [ext_resource type="Script" path="res://platformer_controller/platformer_controller.gd" id="1_0sta8"]
 [ext_resource type="Texture2D" uid="uid://4pnmchsv4rgt" path="res://Sprites/Player/Ducks/fall.png" id="2_f4rwp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://djtddl7olknqs" path="res://Sprites/Player/Ducks/jump.png" id="4_6olkm"]
 [ext_resource type="Texture2D" uid="uid://nyy5aooektgs" path="res://Sprites/Player/Ducks/land.png" id="5_s1mop"]
 [ext_resource type="Texture2D" uid="uid://dxfy1tevt01tb" path="res://Sprites/Player/Ducks/walk.png" id="6_m6hv6"]
+[ext_resource type="AudioStream" uid="uid://ceqcn6k8yvpb7" path="res://Sounds/audio.mp3" id="7_v0anj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_puk6o"]
 
@@ -427,3 +428,6 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Audio" type="AudioStreamPlayer" parent="AudioStreamPlayer2D"]
+stream = ExtResource("7_v0anj")

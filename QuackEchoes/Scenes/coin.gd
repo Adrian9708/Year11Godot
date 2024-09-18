@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var sfx_coin_pickup: AudioStreamPlayer = $sfx_coin_pickup
 
 # Called when the node enters the scene tree for the first time.
 func collected():
